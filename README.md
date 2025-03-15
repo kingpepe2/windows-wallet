@@ -1,49 +1,58 @@
-Tutorial - Compile Windows wallet on Ubuntu Server 22.04
-Compile a wallet for Microsoft Windows on Ubuntu Server 22.04 with the following tutorial.
+Tutorial - Mine for blocks with Microsoft Windows
+Mine for blocks with your Windows wallet and the following instructions.
 
-Update your Ubuntu server with the following command:
+Click here to download the file kingpepe-qt-windows.zip.
 
-sudo apt-get update && sudo apt-get upgrade -y
+Open File Explorer and go to your downloads directory.
 
-Install the required dependencies with the following command:
+Extract the zip file kingpepe-qt-windows.zip
 
-sudo apt-get install make automake cmake curl g++-multilib libtool binutils-gold bsdmainutils pkg-config python3 patch bison -y
+Open "Run" with the keyboard shortcut winkey + r.
 
-Create your source code directory with the following commands:
+Enter the following text behind "Open": notepad
 
-cd ~/
-mkdir source_code
-cd source_code
+Press on the button "OK".
 
-Download the source code of your coin with the following command:
+Paste the following into notepad.
 
-wget "https://dl.walletbuilders.com/download?customer=b99a53a3f81f1bbb2049773ab7e188c73b503cc19256b64eb5&filename=kingpepe-source.tar.gz" -O kingpepe-source.tar.gz
+addnode=kpepesolo.pool.sexy:21053
 
-Type the following command to extract the tar file:
+addnode=kpepe.pool.sexy:11053
 
-tar -xzvf kingpepe-source.tar.gz
 
-64-bit
+Click on the menu item "File" -> "Save As...".
 
-Install the required dependencies with the following command:
+The open dialog box will appear, click on "Save as type" and select the option "All Files (*.*)".
 
-sudo apt-get install g++-mingw-w64-x86-64 -y
+Enter the following text behind "File name": kingpepe.conf
 
-Set the default x86_64-w64-mingw32-g++ compiler option to posix with the following command:
+Click on the menu bar, type the following text %appdata% and press on the enter key. enter
 
-sudo update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
+Create the folder KingPepe and open the folder.
 
-Build x86_64-w64-mingw32 with the following commands:
+Press on the button "Save".
 
-PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
-cd depends
-make HOST=x86_64-w64-mingw32
-cd ..
+Create a new file with the keyboard shortcut ctrl + n.
 
-Type the following commands to compile your 64 bit wallet for Microsoft Windows.
+Paste the following into notepad.
 
-./autogen.sh
-CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
-make
+@echo off
+set SCRIPT_PATH=%cd%
+cd %SCRIPT_PATH%
+echo Press [CTRL+C] to stop mining.
+:begin
+ for /f %%i in ('kingpepe-cli.exe getnewaddress') do set WALLET_ADDRESS=%%i
+ kingpepe-cli.exe generatetoaddress 1 %WALLET_ADDRESS%
+goto begin
 
-The compiled wallet for Microsoft Windows is located in the directory src/qt, the tools are located in the directory src.
+Click on the menu item "File" -> "Save As...".
+
+The open dialog box will appear, click on "Save as type" and select the option "All Files (*.*)".
+
+Enter the following text behind "File name": mine.bat
+
+Click on the menu bar, open the location where you extracted the zip file kingpepe-qt-windows.zip.
+
+Press on the button "Save".
+
+Open your wallet and execute mine.bat to mine your first block.
