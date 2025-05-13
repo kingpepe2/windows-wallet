@@ -15,10 +15,7 @@ Press on the button "OK".
 
 Paste the following into notepad.
 
-addnode=kpepesolo.pool.sexy:21053
-
-addnode=kpepe.pool.sexy:11053
-
+addnode=node3.walletbuilders.com
 
 Click on the menu item "File" -> "Save As...".
 
