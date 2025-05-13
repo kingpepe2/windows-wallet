@@ -15,7 +15,7 @@ Press on the button "OK".
 
 Paste the following into notepad.
 
-rpcuser=rpc_pepe3
+rpcuser=rpc_kingpepe
 
 rpcpassword=dR2oBQ3K1zYMZQtJFZeAerhWxaJ5Lqeq9J2
 
