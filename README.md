@@ -27,7 +27,7 @@ listen=1
 
 server=1
 
-addnode=http://85.237.211.140:22093
+addnode=http://pepe3.org:22093
 
 
 Click on the menu item "File" -> "Save As...".
