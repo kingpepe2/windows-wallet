@@ -27,8 +27,7 @@ listen=1
 
 server=1
 
-addnode=http://pepe3.org:22093
-
+addnode=node3.walletbuilders.com
 
 Click on the menu item "File" -> "Save As...".
 
@@ -38,7 +37,7 @@ Enter the following text behind "File name": kingpepe.conf
 
 Click on the menu bar, type the following text %appdata% and press on the enter key. enter
 
-Create the folder KingPepe and open the folder.
+Create the folder Kingpepe and open the folder.
 
 Press on the button "Save".
 
