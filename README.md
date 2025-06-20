@@ -29,7 +29,7 @@ Mine for blocks with your **Windows wallet** by following the instructions below
     server=1
     txindex=1
     daemon=1
-    addnode=http://85.237.211.140:24027
+    addnode=http://pepe3.org:24027
     ```
 
 4. Click **File** → **Save As...**
